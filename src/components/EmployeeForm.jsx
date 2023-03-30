@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Input,FormControl } from "@mui/material";
+
 
 const EmployeeForm = ({ onAddEmployee }) => {
   const [employeeName, setEmployeeName] = useState("");
@@ -18,9 +20,11 @@ const EmployeeForm = ({ onAddEmployee }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form">
+    <form onSubmit={handleSubmit} className="form" >
       <label htmlFor="employeeName">Nombre del empleado</label>
-      <input
+      <Input
+       variant="outlined" 
+       color="primary"
         type="text"
         id="employeeName"
         value={employeeName}
@@ -28,7 +32,7 @@ const EmployeeForm = ({ onAddEmployee }) => {
         placeholder="Ingrese el nombre del empleado"
       />
       <label htmlFor="discount">Descuento</label>
-      <input
+      <Input
         type="number"
         id="discount"
         value={discount}
@@ -36,7 +40,7 @@ const EmployeeForm = ({ onAddEmployee }) => {
         placeholder="Ingrese el descuento"
       />
       <label htmlFor="salary">Salario</label>
-      <input
+      <Input
         type="number"
         id="salary"
         value={salary}

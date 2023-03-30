@@ -10,7 +10,67 @@ body{
   padding: 20px;
   
 }
+.clock {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
+.time {
+  width: 80%;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-size: 2.5rem;
+  box-shadow: -10px -10px 30px #fff, 10px 10px 30px #192346;
+ 
+}
+.time {
+  --border-size: 3px;
+  --border-angle: 0turn;
+  width: 60vmin;
+  border-radius: 10px;
+  background-image: conic-gradient(
+      from var(--border-angle),
+      #213,
+      #112 50%,
+      #213
+    ),
+    conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+  background-size: calc(100% - (var(--border-size) * 2))
+      calc(100% - (var(--border-size) * 2)),
+    cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: bg-spin 3s linear infinite;
+
+ 
+}
+ @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
+    }
+  }
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+.date {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #181616;
+  font-family: cursive;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -43,11 +103,20 @@ body{
 }
 
 .form button:hover {
-  background-color: #008080;
+  background-color: #223535;
 }
+
+
+label{
+  font-weight: bold;
+  font-family:cursive;
+  font-size: 20px;
+}
+
 
 .employee-list {
   margin-top: 20px;
+  
 }
 
 .employee {
