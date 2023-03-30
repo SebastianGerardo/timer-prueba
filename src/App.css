@@ -1,0 +1,167 @@
+body{
+  background-image: url(./image/calculando.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.App {
+  margin: auto;
+  max-width: 800px;
+  padding: 20px;
+  
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  
+}
+.form {
+  background-color: #f3f3f3;
+  border-radius: 20px;
+  box-shadow: -10px -10px 30px #fff, 10px 10px 30px #babecc;
+  padding: 20px;
+}
+
+
+.form label {
+  margin-bottom: 5px;
+}
+
+.form input {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.form button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #008080;
+}
+
+.employee-list {
+  margin-top: 20px;
+}
+
+.employee {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out;
+}
+
+.employee:hover {
+  transform: scale(1.05);
+}
+
+.employee h3 {
+  margin-top: 0px;
+}
+
+.employee p {
+  margin-bottom: 5px;
+}
+
+.discount-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.discount-form label {
+  margin-bottom: 5px;
+}
+
+.discount-form input {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.discount-form button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #009688;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.discount-form button:hover {
+  background-color: #008080;
+}
+
+footer{
+  font-weight: bold;
+  font-size: 20px;
+  color: #000;
+  border: solid 5px  #008080;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #fff;
+}
+span{
+  font-size: 25px;
+  font-weight: bold;
+  color: #008080;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .employee {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .employee-list {
+    margin-top: 10px;
+  }
+
+  .discount-form {
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .App {
+    max-width: 400px;
+  }
+}
+
+/* @keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadein {
+  animation-name: fadein;
+  animation-duration: 1s;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.slidein {
+  animation-name: slidein;
+  animation-duration: 1s;
+} */
