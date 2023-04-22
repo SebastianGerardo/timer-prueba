@@ -8,7 +8,8 @@ const EmployeeList = ({ employees, onDeleteEmployee, setEmployees }) => {
     const result = [...list];
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
-  
+    
+    localStorage.setItem("employees", JSON.stringify(result));
     return result;
   };
 
