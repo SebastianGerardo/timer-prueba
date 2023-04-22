@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Input,FormControl } from "@mui/material";
-
+import { Input, FormControl } from "@mui/material";
+import { toast, Toaster } from "sonner";
 
 const EmployeeForm = ({ onAddEmployee }) => {
   const [employeeName, setEmployeeName] = useState("");
@@ -10,9 +10,16 @@ const EmployeeForm = ({ onAddEmployee }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!employeeName || !discount || !salary) {
-      alert("Por favor ingrese un nombre de empleado, un descuento y un salario.");
+      toast("Por favor verifique los campos ingresados.");
       return;
+    } else if (discount > 100 || discount < 0) {
+      const discountValidate =
+        discount < 0
+          ? toast("El descuento no puede ser menor a 0.")
+          : toast("El descuento no puede ser mayor a 100.");
+      return discountValidate;
     }
+    console.log(employeeName, discount, salary);
     onAddEmployee({ employeeName, discount, salary });
     setEmployeeName("");
     setDiscount("");
@@ -20,34 +27,43 @@ const EmployeeForm = ({ onAddEmployee }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="form" >
-      <label htmlFor="employeeName">Nombre del empleado</label>
-      <Input
-       variant="outlined" 
-       color="primary"
-        type="text"
-        id="employeeName"
-        value={employeeName}
-        onChange={(event) => setEmployeeName(event.target.value)}
-        placeholder="Ingrese el nombre del empleado"
-      />
-      <label htmlFor="discount">Descuento</label>
-      <Input
-        type="number"
-        id="discount"
-        value={discount}
-        onChange={(event) => setDiscount(event.target.value)}
-        placeholder="Ingrese el descuento"
-      />
-      <label htmlFor="salary">Salario</label>
-      <Input
-        type="number"
-        id="salary"
-        value={salary}
-        onChange={(event) => setSalary(event.target.value)}
-        placeholder="Ingrese el salario"
-      />
-      <button type="submit">Agregar empleado</button>
+    <form onSubmit={handleSubmit} className="form">
+      <Toaster position="top-right" />
+      <label>
+        <label htmlFor="employeeName">Nombre del empleado</label>
+        <Input
+          variant="outlined"
+          color="primary"
+          type="text"
+          id="employeeName"
+          value={employeeName}
+          onChange={(event) => setEmployeeName(event.target.value)}
+          placeholder="Ingrese el nombre del empleado"
+        />
+      </label>
+      <label>
+        <label htmlFor="discount">Descuento</label>
+        <Input
+          type="number"
+          id="discount"
+          value={discount}
+          onChange={(event) => setDiscount(event.target.value)}
+          placeholder="Ingrese el descuento"
+        />
+      </label>
+      <label>
+        <label htmlFor="salary">Salario</label>
+        <Input
+          type="number"
+          id="salary"
+          value={salary}
+          onChange={(event) => setSalary(event.target.value)}
+          placeholder="Ingrese el salario"
+        />
+      </label>
+      <button className="btn-form" type="submit">
+        Agregar empleado
+      </button>
     </form>
   );
 };

@@ -8,14 +8,14 @@ const Employee = ({ id, name, discount, salary, onDeleteEmployee }) => {
   const discountedSalary = calculateDiscountedSalary(salary, discount);
 
   return (
-    <div className="employee">
+    <>
       <h3>
         {name} ({discount}%)
       </h3>
       <p>Salario original: {salary} nuevos soles</p>
       <p>Salario con descuento: {discountedSalary} nuevos soles</p>
       <button onClick={() => onDeleteEmployee(id)}>Eliminar</button>
-    </div>
+    </>
   );
 };
 
