@@ -9,7 +9,7 @@ const Employee = ({ id, name, discount, salary, onDeleteEmployee }) => {
 
   return (
     <>
-      <h3>
+      <h3 className="name-employer">
         {name} ({discount}%)
       </h3>
       <p>Salario original: {salary} nuevos soles</p>
