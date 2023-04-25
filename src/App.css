@@ -30,6 +30,7 @@ body{
   justify-content: space-between;
   align-items: center;
   margin: 2rem;
+  width: auto;
 }
 
 .discounts {
@@ -43,6 +44,8 @@ body{
 
 .title {
   /* margin: ; */
+  width: 100%;
+  text-align: center;
   text-transform: uppercase;
   line-height: 1.2;
   letter-spacing: .2px;
